@@ -55,7 +55,7 @@ const UrlForm = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className=" mt-10 flex items-center justify-center bg-gray-50">
       <form
         className="flex flex-col gap-4 w-full max-w-lg mx-auto bg-white shadow-xl border border-gray-200 p-8 rounded-2xl"
         onSubmit={handleSubmit}
