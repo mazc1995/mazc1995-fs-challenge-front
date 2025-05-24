@@ -1,16 +1,10 @@
 import { useState } from "react"
 
-interface ShortUrl {
-  short_url: string
-}
-
 const UrlForm = () => {
-  const [url, setUrl] = useState("")
-  const [shortUrl, setShortUrl] = useState("")
-  const [data, setData] = useState<ShortUrl | "">("")
+  const [url, setUrl] = useState<string>("")
   const [status, setStatus] = useState<"" | "success" | "error">("")
-  const [shortCode, setShortCode] = useState("")
-  const [copied, setCopied] = useState(false)
+  const [shortCode, setShortCode] = useState<string>("")
+  const [copied, setCopied] = useState<boolean>(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -28,19 +22,13 @@ const UrlForm = () => {
       if (response.ok) {
         const data = await response.json()
         setShortCode(data.short_code)
-        setShortUrl(data.full_url)
-        setData(data)
         setStatus("success")
       } else {
         setShortCode("")
-        setShortUrl("")
-        setData("")
         setStatus("error")
       }
     } catch (error) {
       setShortCode("")
-      setShortUrl("")
-      setData("")
       setStatus("error")
       console.error('Error:', error)
     }
@@ -70,7 +58,7 @@ const UrlForm = () => {
         onChange={(e) => setUrl(e.target.value)}
       />
       <button
-        className="bg-gradient-to-r bg-[#ff914d] hover:to-blue-800 text-white font-bold py-3 rounded-lg shadow-md transition-all text-lg"
+        className="bg-gradient-to-r bg-[#ff914d] hover:bg-[#ff914d]/85 text-white font-bold py-3 rounded-lg shadow-md transition-all text-lg"
         type="submit"
       >
         Shorten URL
