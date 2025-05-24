@@ -36,7 +36,7 @@ const UrlForm = () => {
 
   const handleCopy = async () => {
     if (shortCode) {
-      await navigator.clipboard.writeText(shortCode)
+      await navigator.clipboard.writeText(`http://localhost:5173/${shortCode}`)
       setCopied(true)
       setTimeout(() => setCopied(false), 1500)
     }
@@ -75,9 +75,9 @@ const UrlForm = () => {
       )}
       {shortCode && (
         <div className="flex flex-col items-center my-6">
-          <div className="text-4xl font-extrabold text-blue-700 text-center tracking-widest mb-2">
+          <div className="text-xl font-extrabold text-blue-700 text-center tracking-widest mb-2">
             <span className="bg-blue-100 px-6 py-2 rounded-lg shadow-inner">
-              {shortCode}
+              http://localhost:5173/{shortCode}
             </span>
           </div>
           <button
