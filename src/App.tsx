@@ -7,7 +7,7 @@ const App = () => {
   const [view, setView] = useState<"shorten" | "list">("shorten")
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#0b2341]">
       <Navbar view={view} setView={setView} />
       <main>
         {view === "shorten" && <UrlForm />}

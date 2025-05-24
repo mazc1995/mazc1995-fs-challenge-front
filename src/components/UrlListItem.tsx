@@ -18,7 +18,7 @@ const UrlListItem = ({ url }: { url: ShortUrl }) => {
   }, [url.click_count])
 
   return <>
-    <li key={url.short_code} className="bg-white hover:bg-gray-100 cursor-pointer shadow rounded-lg p-4 flex flex-col md:flex-row md:items-center md:justify-between" onClick={() => {
+    <li key={url.short_code} className="bg-white shadow rounded-lg p-4 flex flex-col md:flex-row md:items-center md:justify-between" onClick={() => {
       handleClick(url.short_code)
     }} >
       <div>
