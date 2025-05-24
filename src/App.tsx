@@ -1,12 +1,19 @@
+import { useState } from "react"
 import UrlForm from "./components/UrlForm"
 import UrlList from "./components/UrlList"
+import Navbar from "./components/Navbar"
 
-function App() {
+const App = () => {
+  const [view, setView] = useState<"shorten" | "list">("shorten")
+
   return (
-    <>
-      <UrlForm />
-      <UrlList />
-    </>
+    <div className="min-h-screen bg-gray-50">
+      <Navbar view={view} setView={setView} />
+      <main>
+        {view === "shorten" && <UrlForm />}
+        {view === "list" && <UrlList />}
+      </main>
+    </div>
   )
 }
 
