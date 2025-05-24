@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
+# URL Shortener App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, full-stack URL shortener built with React (Vite + TailwindCSS) for the frontend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Shorten URLs:** Instantly generate a short code for any long URL.
+- **Top URLs:** View a dynamic, auto-sorted list of the most clicked short URLs.
+- **Copy to Clipboard:** Easily copy your short URL with one click.
+- **Smart Redirect:** Visiting `/shortcode` in the browser automatically redirects to the original URL.
+- **Modern UI:** Responsive and clean design.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tech Stack
+
+- **Frontend:** React (Vite), TailwindCSS, TypeScript
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```sh
+git clone https://github.com/mazc1995/mazc1995-fs-challenge-front.git
+cd mazc1995-fs-challenge-front
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Frontend
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm install
 ```
+### 3. Start the servers
+
+```sh
+npm run dev
+```
+
+## Usage
+
+### Shorten a URL
+
+1. Go to the homepage.
+2. Paste your long URL and click **Shorten URL**.
+3. Copy the generated short URL and share it!
+
+### Redirect
+
+- Visit `http://localhost:5173/{shortcode}` in your browser.
+- You will be redirected to the original URL in a new tab.
+
+### View Top URLs
+
+- Click on **Top URLs** in the navbar to see the most popular links, sorted by click count.
+
+---
+
+## Development Notes
+
+- The frontend uses React Router for dynamic routing.
+- All state and UI logic is handled client-side for a smooth SPA experience.
+
+---
+
+## Author
+
+- [Mario Andrés Zambrano](https://github.com/mazc1995)
